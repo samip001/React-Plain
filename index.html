@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React Plain</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+        // let el = document.createElement('h1');
+        // console.log(el);
+
+        // el.innerText = "Hello Element"
+
+        // let root = document.querySelector("#root");
+        // root.appendChild(el);
+
+        function MyH1Element({ data }) {
+            return (
+                <h1>
+                    <span>{data}</span>
+                </h1>
+            );
+        }
+        function MyElement({ myData }) {
+            console.log(myData);
+            return (
+                <div>
+                    <MyH1Element data={myData} />
+                </div>
+            );
+        }
+
+
+        let el = React.createElement('h1', null, 'Hello React');
+        console.log(el);
+
+        let root = document.getElementById('root');
+
+        ReactDOM.render(<MyElement myData="Hello My Element" />, root);
+
+
+    </script>
+</body>
+
+
+</html>
