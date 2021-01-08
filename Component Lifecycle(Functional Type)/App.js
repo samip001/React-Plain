@@ -9,6 +9,7 @@ function App() {
     const [title, setTitle] = useState("Hello Title State");
     const [isShowing, setIsShowing] = useState(false);
     // const [didMount, setDidMount] = useState(false); //still problem, since it will re-rendered 2 times
+    // so, useRef (hook) is used.
 
     const mountRef = useRef(false);
 
